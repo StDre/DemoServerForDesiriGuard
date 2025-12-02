@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4990362c-61fb-4fbf-bc2e-b6e8da1909f1" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="34p67256DX1zkqowVMbgVogVqY2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.DemoServer.executor": "Run",
+    "Maven.DemoDeserialize [package].executor": "Run",
+    "Maven.DemoServer [clean,install].executor": "Run",
+    "Maven.DemoServer [clean].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/drexl/OneDrive/Studium/5/ITS2/Shared ITS2/DemoDeserialize",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/drexl/OneDrive/Studium/5/ITS2/Repo/DemoDeserialize/src/Main.java",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "advanced.settings",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="QodanaHighlightedReportService">
+    <option name="localReportPersistedInfo">
+      <LocalReportPersistedInfo>
+        <option name="path" value="C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\query-results.sarif" />
+        <option name="qodana" value="false" />
+        <option name="reportGuid" value="dff04fbd-7c91-4f81-926c-d23d35c9aae2" />
+        <option name="reportName" value="dff04fbd-7c91-4f81-926c-d23d35c9aae2" />
+      </LocalReportPersistedInfo>
+    </option>
+  </component>
+  <component name="QodanaIsSelectedPersistenceService">
+    <option name="selectedOrLoading" value="true" />
+  </component>
+  <component name="QodanaReportsService">
+    <option name="descriptions">
+      <ReportDescription path="C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\query-results.sarif" qodana="false" reportGuid="5b120a8c-3b1a-42e7-8171-ac4406179636" reportId="5b120a8c-3b1a-42e7-8171-ac4406179636" />
+      <ReportDescription path="C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\query-results.sarif" qodana="false" reportGuid="648ff495-08fa-4071-a5d6-25add856eae1" reportId="648ff495-08fa-4071-a5d6-25add856eae1" />
+      <ReportDescription path="C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\query-results.sarif" qodana="false" reportGuid="bb48712b-f09b-404d-a5a1-7b8d9460a232" reportId="bb48712b-f09b-404d-a5a1-7b8d9460a232" />
+      <ReportDescription path="C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\query-results.sarif" qodana="false" reportGuid="5c9b1fee-b777-4878-800c-7e9752b3f110" reportId="5c9b1fee-b777-4878-800c-7e9752b3f110" />
+      <ReportDescription path="C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\query-results.sarif" qodana="false" reportGuid="dff04fbd-7c91-4f81-926c-d23d35c9aae2" reportId="dff04fbd-7c91-4f81-926c-d23d35c9aae2" />
+    </option>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn package" />
+      <command value="mvn clean install" />
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="DemoServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="demo.DemoServer" />
+      <module name="DemoServer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="DemoDeserialize" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DemoServer" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.27397.103" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4990362c-61fb-4fbf-bc2e-b6e8da1909f1" name="Changes" comment="" />
+      <created>1761897996661</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1761897996661</updated>
+      <workItem from="1761897997780" duration="2661000" />
+      <workItem from="1762613332160" duration="2838000" />
+      <workItem from="1763219143925" duration="454000" />
+      <workItem from="1763219661959" duration="6028000" />
+      <workItem from="1764174023146" duration="2263000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

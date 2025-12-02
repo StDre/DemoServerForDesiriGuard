@@ -1,0 +1,93 @@
+[2025-11-27 22:21:18] This is codeql execute queries -J-Xmx1800M --off-heap-ram=1560 --verbosity=progress --logdir=C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\db\log --evaluator-log-level=5 --warnings=show --qlconfig-file=C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\qlconfig.yml --dynamic-join-order-mode=none --output=C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\results.sarif -- C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\db\db-java path:C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql
+[2025-11-27 22:21:18] Calling plumbing command: codeql resolve queries --qlconfig-file=C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\qlconfig.yml --format=json -- path:C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql
+[2025-11-27 22:21:18] [PROGRESS] resolve queries> Recording pack reference (anonymous QL pack at C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql) at C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize.
+[2025-11-27 22:21:18] Plumbing command codeql resolve queries completed:
+                      [
+                        "C:\\Users\\Jonas\\OneDrive\\Bachelor - Informatik\\3. Studienunterlagen\\5. Semester\\IT-Sicherheit II\\Shared ITS2\\DemoDeserialize\\deseriguard-dataflow.ql"
+                      ]
+[2025-11-27 22:21:18] Refusing fancy output: The terminal is not an xterm: 
+[2025-11-27 22:21:18] Creating executor with 1 threads.
+[2025-11-27 22:21:18] Calling plumbing command: codeql resolve extensions --qlconfig-file=C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\qlconfig.yml --include-extension-row-locations path:C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql
+[2025-11-27 22:21:19] Calling plumbing command: codeql resolve queries --qlconfig-file=C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\qlconfig.yml --allow-library-packs --format startingpacks -- path:C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql
+[2025-11-27 22:21:19] [PROGRESS] resolve queries> Recording pack reference (anonymous QL pack at C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql) at C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize.
+[2025-11-27 22:21:19] Plumbing command codeql resolve queries completed:
+                      [
+                        "C:\\Users\\Jonas\\OneDrive\\Bachelor - Informatik\\3. Studienunterlagen\\5. Semester\\IT-Sicherheit II\\Shared ITS2\\DemoDeserialize"
+                      ]
+[2025-11-27 22:21:19] Calling plumbing command: codeql resolve extensions-by-pack --qlconfig-file=C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\qlconfig.yml --include-extension-row-locations -- C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize
+[2025-11-27 22:21:19] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] <anonymous pack>: not 0.0.0 {root: <anonymous pack>@0.0.0}
+[2025-11-27 22:21:19] [SPAMMY] resolve extensions-by-pack> [DERIVATION] <anonymous pack>: 0.0.0 {<anonymous pack>: not 0.0.0 {root: <anonymous pack>@0.0.0}}
+[2025-11-27 22:21:19] [SPAMMY] resolve extensions-by-pack> [DECISION 1] <anonymous pack>: 0.0.0
+[2025-11-27 22:21:19] Plumbing command codeql resolve extensions-by-pack completed:
+                      {
+                        "models" : [ ],
+                        "data" : { },
+                        "threatModels" : { },
+                        "extensionPacks" : [ ]
+                      }
+[2025-11-27 22:21:19] Plumbing command codeql resolve extensions completed:
+                      {
+                        "models" : [ ],
+                        "data" : { },
+                        "threatModels" : { },
+                        "extensionPacks" : [ ]
+                      }
+[2025-11-27 22:21:19] Calling plumbing command: codeql resolve library-path --qlconfig-file=C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\qlconfig.yml --query=C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql --format=json
+[2025-11-27 22:21:19] [DETAILS] resolve library-path> Resolving query at normalized path C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql.
+[2025-11-27 22:21:19] [DETAILS] resolve library-path> Found no pack; trying after symlink resolution with C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql.
+[2025-11-27 22:21:19] [DETAILS] resolve library-path> Found enclosing pack 'DemoDeserialize' at C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize.
+[2025-11-27 22:21:19] [DETAILS] resolve library-path> Adding compilation cache at C:\Users\Jonas\.codeql\compile-cache.
+[2025-11-27 22:21:19] [DETAILS] resolve library-path> Resolving library dependencies from C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql.
+[2025-11-27 22:21:19] [SPAMMY] resolve library-path> [INCOMPATIBILITY] <anonymous pack>: not 0.0.0 {root: <anonymous pack>@0.0.0}
+[2025-11-27 22:21:19] [SPAMMY] resolve library-path> [DERIVATION] <anonymous pack>: 0.0.0 {<anonymous pack>: not 0.0.0 {root: <anonymous pack>@0.0.0}}
+[2025-11-27 22:21:19] [SPAMMY] resolve library-path> [DECISION 1] <anonymous pack>: 0.0.0
+[2025-11-27 22:21:19] [DETAILS] resolve library-path> QL pack dependencies for C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize resolved OK.
+[2025-11-27 22:21:19] [DETAILS] resolve library-path> Found no dbscheme through dependencies.
+[2025-11-27 22:21:19] Plumbing command codeql resolve library-path completed:
+                      {
+                        "libraryPath" : [
+                          "C:\\Users\\Jonas\\OneDrive\\Bachelor - Informatik\\3. Studienunterlagen\\5. Semester\\IT-Sicherheit II\\Shared ITS2\\DemoDeserialize"
+                        ],
+                        "compilationCache" : [
+                          "C:\\Users\\Jonas\\.codeql\\compile-cache"
+                        ],
+                        "relativeName" : "DemoDeserialize\\deseriguard-dataflow.ql",
+                        "possibleAdvice" : "There should probably be a qlpack.yml file declaring dependencies in C:\\Users\\Jonas\\OneDrive\\Bachelor - Informatik\\3. Studienunterlagen\\5. Semester\\IT-Sicherheit II\\Shared ITS2\\DemoDeserialize or an enclosing directory.",
+                        "qlPackName" : "DemoDeserialize"
+                      }
+[2025-11-27 22:21:19] [PROGRESS] execute queries> Compiling query plan for C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql.
+[2025-11-27 22:21:19] [DETAILS] execute queries> Resolving imports for C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql.
+[2025-11-27 22:21:19] Resolved file set for C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql hashes to 126f48163858d2ccfe4f5f7197ffd842.
+[2025-11-27 22:21:19] [DETAILS] execute queries> Checking QL for C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql.
+[2025-11-27 22:21:19] Stale frontend caches are invalidated based on import graph reachability.
+[2025-11-27 22:21:19] ExternalModuleBindingPass ...
+[2025-11-27 22:21:19] ExternalModuleBindingPass time: 00:00.001
+[2025-11-27 22:21:19] CollectInstantiationsPass ...
+[2025-11-27 22:21:19] CollectInstantiationsPass time: 00:00.008
+[2025-11-27 22:21:19] Ql checks ...
+[2025-11-27 22:21:19] Ql checks time: 00:00.101
+[2025-11-27 22:21:20] [ERROR] execute queries> ERROR: could not resolve module java (C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql:8,8-12)
+[2025-11-27 22:21:20] [ERROR] execute queries> ERROR: could not resolve module DataFlow (C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql:9,8-16)
+[2025-11-27 22:21:20] [ERROR] execute queries> ERROR: could not resolve module DataFlow (C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql:14,27-35)
+[2025-11-27 22:21:20] [ERROR] execute queries> ERROR: could not resolve type MethodAccess (C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql:16,12-24)
+[2025-11-27 22:21:20] [ERROR] execute queries> ERROR: asExpr() cannot be resolved for type DeserSource.extends (C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql:20,12-18)
+[2025-11-27 22:21:20] [ERROR] execute queries> ERROR: could not resolve module DataFlow (C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql:28,25-33)
+[2025-11-27 22:21:20] [ERROR] execute queries> ERROR: could not resolve type MethodAccess (C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql:30,12-24)
+[2025-11-27 22:21:20] [ERROR] execute queries> ERROR: asExpr() cannot be resolved for type DeserSink.extends (C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql:46,12-18)
+[2025-11-27 22:21:20] [ERROR] execute queries> ERROR: could not resolve type Expr (C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql:54,20-24)
+[2025-11-27 22:21:20] [ERROR] execute queries> ERROR: could not resolve type CastExpr (C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql:55,27-35)
+[2025-11-27 22:21:20] [ERROR] execute queries> ERROR: could not resolve type Expr (C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql:58,26-30)
+[2025-11-27 22:21:20] [ERROR] execute queries> ERROR: could not resolve type InstanceOfExpr (C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql:59,27-41)
+[2025-11-27 22:21:20] [ERROR] execute queries> ERROR: could not resolve type Expr (C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql:65,22-26)
+[2025-11-27 22:21:20] [ERROR] execute queries> ERROR: could not resolve type MethodAccess (C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql:73,28-40)
+[2025-11-27 22:21:20] [ERROR] execute queries> ERROR: could not resolve type MethodAccess (C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql:77,28-40)
+[2025-11-27 22:21:20] [ERROR] execute queries> ERROR: could not resolve module DataFlow (C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql:80,39-47)
+[2025-11-27 22:21:20] [ERROR] execute queries> ERROR: could not resolve module DataFlow (C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql:80,70-78)
+[2025-11-27 22:21:20] [ERROR] execute queries> ERROR: could not resolve module DataFlow (C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql:81,7-15)
+[2025-11-27 22:21:20] [WARN] execute queries> WARNING: unused predicate 'getInstanceOfType' (C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\deseriguard-dataflow.ql:58,8-25)
+[2025-11-27 22:21:20] Sequence stamp origin is -5976367626141239570
+[2025-11-27 22:21:20] Pausing evaluation to close the cache at sequence stamp o+0
+[2025-11-27 22:21:20] The disk cache is freshly trimmed; leave it be.
+[2025-11-27 22:21:20] Unpausing evaluation
+[2025-11-27 22:21:20] This NaiveBuddyAllocator requested 0 eviction rounds.
+[2025-11-27 22:21:20] Exiting with code 2

@@ -1,0 +1,15 @@
+-d
+C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\target\classes
+-classpath
+C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\target\classes;
+-sourcepath
+C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\src\main\java;C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\target\generated-sources\annotations;
+-s
+C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\target\generated-sources\annotations
+-g
+-target
+1.8
+-source
+1.8
+-XDuseUnsharedTable=true
+C:\Users\Jonas\OneDrive\Bachelor - Informatik\3. Studienunterlagen\5. Semester\IT-Sicherheit II\Shared ITS2\DemoDeserialize\src\main\java\demo\DemoServer.java
