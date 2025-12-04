@@ -9,6 +9,8 @@ function Get-RelevantSarifHash {
     param(
         [string]$sarifPath
     )
+    Write-Host "Removing semanticVersion and timeUTC" -ForegroundColor Red
+
 
     $json = Get-Content $sarifPath -Raw | ConvertFrom-Json
 
