@@ -1,6 +1,0 @@
-[2025-11-27 22:15:20] [javac-output-33932] Warnung: [options] Bootstrap Classpath ist nicht zusammen mit -source 8 festgelegt
-[2025-11-27 22:15:20] [javac-output-33932]   Wenn Sie den Bootstrap Classpath nicht festlegen, kann dies zu Klassendateien führen, die auf JDK 8 nicht ausgeführt werden können
-[2025-11-27 22:15:20] [javac-output-33932]     --release 8 wird anstelle von -source 8 -target 1.8 empfohlen, weil dadurch der Bootstrap Classpath automatisch festgelegt wird
-[2025-11-27 22:15:20] [javac-output-33932] Warnung: [options] Quellwert 8 ist veraltet und wird in einem zukünftigen Release entfernt
-[2025-11-27 22:15:20] [javac-output-33932] Warnung: [options] Zielwert 8 ist veraltet und wird in einem zukünftigen Release entfernt
-[2025-11-27 22:15:20] [javac-output-33932] Warnung: [options] Verwenden Sie -Xlint:-options, um Warnungen zu veralteten Optionen zu unterdrücken.
