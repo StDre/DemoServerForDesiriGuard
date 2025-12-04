@@ -66,7 +66,7 @@ if (Test-Path $hashFile) {
     $newHash = Get-RelevantSarifHash -sarifPath $outputSarif
 
     if ($oldHash -eq $newHash) {
-        Write-Host "SARIF unchanged → skipping policy generation." -ForegroundColor Yellow
+        Write-Host "SARIF unchanged -> skipping policy generation." -ForegroundColor Yellow
         exit 0
     }
 } else {

@@ -1,0 +1,77 @@
+[T 20:17:35 6924] Initializing tracer.
+[T 20:17:35 6924] Initializing tags.
+[T 20:17:35 6924] CodeQL CLI version 2.23.6
+[T 20:17:35 6924] Initializing tracer.
+[T 20:17:35 6924] Initializing tags.
+[T 20:17:35 6924] Allocated ID BFA1AA0500001B0C_0000000000000001 (parent )
+[T 20:17:35 6924] ==== Candidate to intercept: C:\Users\drexl\Downloads\codeql-bundle-win64.tar\codeql-bundle-win64\codeql\tools\win64\runner.exe (6704) ====
+[T 20:17:35 6924] Lua: === Intercepted call to c:\users\drexl\downloads\codeql-bundle-win64.tar\codeql-bundle-win64\codeql\tools\win64\runner.exe ===
+[T 20:17:35 6924] Executing the following tracer actions:
+[T 20:17:35 6924] Tracer actions:
+[T 20:17:35 6924] pre_invocations(0)
+[T 20:17:35 6924] post_invocations(0)
+[T 20:17:35 6924] trace_languages(1): [java]
+[T 20:17:35 6704] Initializing tracer.
+[T 20:17:35 6704] Initializing tags.
+[T 20:17:35 6704] ID set to BFA1AA0500001B0C_0000000000000001 (parent root)
+[T 20:17:35 6704] Allocated ID 4CCBB55800001A30_0000000000000001 (parent BFA1AA0500001B0C_0000000000000001)
+[T 20:17:35 6704] ==== Candidate to intercept: C:\Windows\System32\cmd.exe (14088) ====
+[T 20:17:35 6704] Lua: === Intercepted call to c:\windows\system32\cmd.exe ===
+[T 20:17:35 6704] Executing the following tracer actions:
+[T 20:17:35 6704] Tracer actions:
+[T 20:17:35 6704] pre_invocations(0)
+[T 20:17:35 6704] post_invocations(0)
+[T 20:17:35 6704] trace_languages(1): [java]
+[T 20:17:35 14088] Initializing tracer.
+[T 20:17:35 14088] Initializing tags.
+[T 20:17:35 14088] ID set to 4CCBB55800001A30_0000000000000001 (parent BFA1AA0500001B0C_0000000000000001)
+[T 20:17:35 14088] Allocated ID 2892DA3300003708_0000000000000001 (parent 4CCBB55800001A30_0000000000000001)
+[T 20:17:35 14088] ==== Candidate to intercept: C:\Program Files\Common Files\Oracle\Java\javapath_target_5163781\java.exe (16444) ====
+[T 20:17:35 14088] Lua: === Intercepted call to c:\program files\common files\oracle\java\javapath_target_5163781\java.exe ===
+[T 20:17:35 14088] Executing the following tracer actions:
+[T 20:17:35 14088] Tracer actions:
+[T 20:17:35 14088] pre_invocations(0)
+[T 20:17:35 14088] post_invocations(0)
+[T 20:17:35 14088] trace_languages(1): [java]
+[T 20:17:35 16444] Initializing tracer.
+[T 20:17:35 16444] Initializing tags.
+[T 20:17:35 16444] ID set to 2892DA3300003708_0000000000000001 (parent 4CCBB55800001A30_0000000000000001)
+[T 20:17:35 16444] Allocated ID 4C1DC1460000403C_0000000000000001 (parent 2892DA3300003708_0000000000000001)
+[T 20:17:35 16444] ==== Candidate to intercept: C:\Program Files\Java\jdk-21\bin\java.exe (17896) ====
+[T 20:17:35 16444] Lua: === Intercepted call to c:\program files\java\jdk-21\bin\java.exe ===
+[T 20:17:35 16444] Executing the following tracer actions:
+[T 20:17:35 16444] Tracer actions:
+[T 20:17:35 16444] pre_invocations(0)
+[T 20:17:35 16444] post_invocations(0)
+[T 20:17:35 16444] trace_languages(1): [java]
+[T 20:17:35 17896] Initializing tracer.
+[T 20:17:35 17896] Initializing tags.
+[T 20:17:35 17896] ID set to 4C1DC1460000403C_0000000000000001 (parent 2892DA3300003708_0000000000000001)
+[T 20:17:36 17896] Passing through -javaagent:C:\Users\drexl\Downloads\codeql-bundle-win64.tar\codeql-bundle-win64\codeql\java\tools\codeql-java-agent.jar=ignore-project,java,kotlin to underlying JVM.
+[T 20:17:36 17896] Passing through -Xbootclasspath/a:C:\Users\drexl\Downloads\codeql-bundle-win64.tar\codeql-bundle-win64\codeql\java\tools\codeql-java-agent.jar to underlying JVM.
+[T 20:17:36 17896] Intercepted JVM creation with extra hidden args: ['-javaagent:C:\Users\drexl\Downloads\codeql-bundle-win64.tar\codeql-bundle-win64\codeql\java\tools\codeql-java-agent.jar=ignore-project,java,kotlin' '-Xbootclasspath/a:C:\Users\drexl\Downloads\codeql-bundle-win64.tar\codeql-bundle-win64\codeql\java\tools\codeql-java-agent.jar' ] (result: 1, 0).
+[T 20:17:36 14088] Allocated ID E855C51B00003708_0000000000000001 (parent 4CCBB55800001A30_0000000000000001)
+[T 20:17:36 14088] ==== Candidate to intercept: C:\Program Files\Common Files\Oracle\Java\javapath_target_5163781\java.exe (17888) ====
+[T 20:17:36 14088] Lua: === Intercepted call to c:\program files\common files\oracle\java\javapath_target_5163781\java.exe ===
+[T 20:17:36 14088] Executing the following tracer actions:
+[T 20:17:36 14088] Tracer actions:
+[T 20:17:36 14088] pre_invocations(0)
+[T 20:17:36 14088] post_invocations(0)
+[T 20:17:36 14088] trace_languages(1): [java]
+[T 20:17:36 17888] Initializing tracer.
+[T 20:17:36 17888] Initializing tags.
+[T 20:17:36 17888] ID set to E855C51B00003708_0000000000000001 (parent 4CCBB55800001A30_0000000000000001)
+[T 20:17:36 17888] Allocated ID A0B8108F000045E0_0000000000000001 (parent E855C51B00003708_0000000000000001)
+[T 20:17:36 17888] ==== Candidate to intercept: C:\Program Files\Java\jdk-21\bin\java.exe (19008) ====
+[T 20:17:36 17888] Lua: === Intercepted call to c:\program files\java\jdk-21\bin\java.exe ===
+[T 20:17:36 17888] Executing the following tracer actions:
+[T 20:17:36 17888] Tracer actions:
+[T 20:17:36 17888] pre_invocations(0)
+[T 20:17:36 17888] post_invocations(0)
+[T 20:17:36 17888] trace_languages(1): [java]
+[T 20:17:36 19008] Initializing tracer.
+[T 20:17:36 19008] Initializing tags.
+[T 20:17:36 19008] ID set to A0B8108F000045E0_0000000000000001 (parent E855C51B00003708_0000000000000001)
+[T 20:17:36 19008] Passing through -javaagent:C:\Users\drexl\Downloads\codeql-bundle-win64.tar\codeql-bundle-win64\codeql\java\tools\codeql-java-agent.jar=ignore-project,java,kotlin to underlying JVM.
+[T 20:17:36 19008] Passing through -Xbootclasspath/a:C:\Users\drexl\Downloads\codeql-bundle-win64.tar\codeql-bundle-win64\codeql\java\tools\codeql-java-agent.jar to underlying JVM.
+[T 20:17:36 19008] Intercepted JVM creation with extra hidden args: ['-javaagent:C:\Users\drexl\Downloads\codeql-bundle-win64.tar\codeql-bundle-win64\codeql\java\tools\codeql-java-agent.jar=ignore-project,java,kotlin' '-Xbootclasspath/a:C:\Users\drexl\Downloads\codeql-bundle-win64.tar\codeql-bundle-win64\codeql\java\tools\codeql-java-agent.jar' ] (result: 1, 0).

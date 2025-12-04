@@ -2,7 +2,7 @@
  * @id java/examples/method-call
  * @name Call to method
  * @description Finds calls to com.example.Class.methodName
- * @kind problem    
+ * @kind problem
  * @problem.severity warning
  * @tags call
  *       method
@@ -23,7 +23,7 @@ select
   // Python‑Script erwartet folgendes Format:
   // "Deserialization!info!<target>!<function>!<object>!<declaringType>!<method>"
   "Deserialization!info!"
-  + "target" + "!"
+  + "demo.Message" + "!"
   + m.getName() + "!"
   + m.getDeclaringType().getQualifiedName() + "!"
   + m.getDeclaringType().getQualifiedName() + "!"
