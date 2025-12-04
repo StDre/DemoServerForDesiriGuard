@@ -58,18 +58,41 @@ if ($LASTEXITCODE -ne 0) {
     exit 1
 }
 
-# --- STEP 3: GENERATE POLICY ---------------------------------
-Write-Host "Generating DesiriGuard policy..." -ForegroundColor Cyan
+# --- STEP 2.5: Check whether SARIF changed ---------------------------
+Write-Host "Checking whether SARIF changed..." -ForegroundColor Cyan
 
-# Python Script ausführen
-py $policygen `
-    --path "$outputSarif" `
-    --out "$outputPolicy" `
-    --jdk 8
+$hashFile = Join-Path $outputPolicy ".sarif.hash"
 
-if ($LASTEXITCODE -ne 0) {
-    Write-Host "Policy generation failed!" -ForegroundColor Red
-    exit 1
+# Get hash of current SARIF
+$currentHash = (Get-FileHash -Algorithm SHA256 $outputSarif).Hash
+
+$previousHash = ""
+if (Test-Path $hashFile) {
+    $previousHash = Get-Content $hashFile
 }
 
-Write-Host "Analysis complete. Policy stored as $outputPolicy" -ForegroundColor Green
+$shouldRunPolicygen = $currentHash -ne $previousHash
+
+
+# --- STEP 3: GENERATE POLICY (ONLY IF SARIF CHANGED) -----------------
+if ($shouldRunPolicygen) {
+    Write-Host "SARIF changed → Generating new DesiriGuard policy..." -ForegroundColor Cyan
+
+    py $policygen `
+        --path "$outputSarif" `
+        --out "$outputPolicy" `
+        --jdk 8
+
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "Policy generation failed!" -ForegroundColor Red
+        exit 1
+    }
+
+    # Save hash for future comparisons
+    $currentHash | Out-File $hashFile
+
+    Write-Host "New policy generated." -ForegroundColor Green
+}
+else {
+    Write-Host "SARIF did not change → Reusing previous policy." -ForegroundColor Yellow
+}
