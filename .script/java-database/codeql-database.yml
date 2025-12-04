@@ -1,13 +1,13 @@
 ---
 sourceLocationPrefix: C:\Users\drexl\OneDrive\Studium\5\ITS2\Repo\DemoDeserialize
-baselineLinesOfCode: 47
+baselineLinesOfCode: 54
 unicodeNewlines: false
 columnKind: utf16
 primaryLanguage: java
 creationMetadata:
-  sha: 1379741b88b0328b4296e930ded91dda4e913f8b
+  sha: 3f7d6473b9433d9c4194d057fd8876b7d5f4232c
   cliVersion: 2.23.6
-  creationTime: 2025-12-04T20:50:57.157892100Z
+  creationTime: 2025-12-04T20:58:46.440197300Z
 overlayBaseDatabase: false
 overlayDatabase: false
 finalised: true
