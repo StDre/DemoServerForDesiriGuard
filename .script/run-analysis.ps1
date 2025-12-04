@@ -32,10 +32,13 @@ function Get-RelevantSarifHash {
 
     $cleanJson = $json | ConvertTo-Json -Depth 100
 
-    return (New-Object System.Security.Cryptography.SHA256Managed).
+    $hash = (New-Object System.Security.Cryptography.SHA256Managed).
             ComputeHash([System.Text.Encoding]::UTF8.GetBytes($cleanJson)) |
-            ForEach-Object { $_.ToString("x2") } -join ""
+            ForEach-Object { $_.ToString("x2") }
+
+    return $hash -join ""
 }
+
 
 # --- PATHS ---------------------------------------------------
 $projectRoot = (Resolve-Path "..").Path
@@ -56,9 +59,9 @@ if (Test-Path $databaseDir) {
     Remove-Item -Recurse -Force $databaseDir
 }
 
-if (Test-Path $queryResultsDir) {
-    Write-Host "Deleting old query results..." -ForegroundColor Yellow
-    Remove-Item -Recurse -Force $queryResultsDir
+if (Test-Path $outputSarif) {
+    Write-Host "Deleting old SARIF..." -ForegroundColor Yellow
+    Remove-Item -Force $outputSarif
 }
 
 if (Test-Path $outputPolicy) {
@@ -114,7 +117,7 @@ if (Test-Path $hashFile) {
 }
 
 # --- STEP 3: GENERATE POLICY (ONLY IF SARIF CHANGED) -----------------
-Write-Host "SARIF changed → Generating new DesiriGuard policy..." -ForegroundColor Cyan
+Write-Host "SARIF changed -> Generating new DesiriGuard policy..." -ForegroundColor Cyan
 
 py $policygen `
     --path "$outputSarif" `
