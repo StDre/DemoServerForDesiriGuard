@@ -81,10 +81,6 @@ if (Test-Path $outputSarif) {
     Remove-Item -Force $outputSarif
 }
 
-if (Test-Path $outputPolicy) {
-    Write-Host "Deleting old policy..." -ForegroundColor Yellow
-    Remove-Item -Recurse -Force $outputPolicy
-}
 
 # --- CREATE QUERY RESULTS DIR --------------------------------
 if (-not (Test-Path $queryResultsDir)) {
