@@ -4,6 +4,39 @@
 
 Write-Host "=== Running static analysis (CodeQL + Policygen) ===" -ForegroundColor Cyan
 
+# --- FUNCTION DEFINITIONS (MUST BE FIRST) ----------------------
+function Get-RelevantSarifHash {
+    param(
+        [string]$sarifPath
+    )
+
+    $json = Get-Content $sarifPath -Raw | ConvertFrom-Json
+
+    foreach ($run in $json.runs) {
+        if ($run.tool.driver.PSObject.Properties["semanticVersion"]) {
+            $run.tool.driver.PSObject.Properties.Remove("semanticVersion")
+        }
+
+        if ($run.tool.driver.PSObject.Properties["notifications"]) {
+            $run.tool.driver.PSObject.Properties.Remove("notifications")
+        }
+
+        foreach ($inv in $run.invocations) {
+            foreach ($note in $inv.toolExecutionNotifications) {
+                if ($note.PSObject.Properties["timeUtc"]) {
+                    $note.PSObject.Properties.Remove("timeUtc")
+                }
+            }
+        }
+    }
+
+    $cleanJson = $json | ConvertTo-Json -Depth 100
+
+    return (New-Object System.Security.Cryptography.SHA256Managed).
+            ComputeHash([System.Text.Encoding]::UTF8.GetBytes($cleanJson)) |
+            ForEach-Object { $_.ToString("x2") } -join ""
+}
+
 # --- PATHS ---------------------------------------------------
 $projectRoot = (Resolve-Path "..").Path
 $scriptDir   = (Resolve-Path ".").Path
@@ -24,11 +57,13 @@ if (Test-Path $databaseDir) {
 }
 
 if (Test-Path $queryResultsDir) {
+    Write-Host "Deleting old query results..." -ForegroundColor Yellow
     Remove-Item -Recurse -Force $queryResultsDir
 }
 
 if (Test-Path $outputPolicy) {
-    Remove-Item $outputPolicy
+    Write-Host "Deleting old policy..." -ForegroundColor Yellow
+    Remove-Item -Recurse -Force $outputPolicy
 }
 
 # --- CREATE QUERY RESULTS DIR --------------------------------
@@ -37,7 +72,7 @@ if (-not (Test-Path $queryResultsDir)) {
 }
 
 # --- STEP 1: CREATE CODEQL DATABASE ---------------------------
-Write-Host " Creating CodeQL database..." -ForegroundColor Cyan
+Write-Host "Creating CodeQL database..." -ForegroundColor Cyan
 
 Set-Location $projectRoot
 
@@ -46,12 +81,12 @@ Set-Location $projectRoot
     --command="mvn clean install"
 
 if ($LASTEXITCODE -ne 0) {
-    Write-Host " CodeQL database creation failed!" -ForegroundColor Red
+    Write-Host "CodeQL database creation failed!" -ForegroundColor Red
     exit 1
 }
 
 # --- STEP 2: ANALYZE DATABASE --------------------------------
-Write-Host " Analyzing with CodeQL rules..." -ForegroundColor Cyan
+Write-Host "Analyzing with CodeQL rules..." -ForegroundColor Cyan
 
 Set-Location $scriptDir
 
@@ -95,35 +130,3 @@ if ($LASTEXITCODE -ne 0) {
 Set-Content -Path $hashFile -Value $newHash
 
 Write-Host "New policy generated." -ForegroundColor Green
-
-function Get-RelevantSarifHash {
-    param(
-        [string]$sarifPath
-    )
-
-    $json = Get-Content $sarifPath -Raw | ConvertFrom-Json
-
-    foreach ($run in $json.runs) {
-        if ($run.tool.driver.PSObject.Properties["semanticVersion"]) {
-            $run.tool.driver.PSObject.Properties.Remove("semanticVersion")
-        }
-
-        if ($run.tool.driver.PSObject.Properties["notifications"]) {
-            $run.tool.driver.PSObject.Properties.Remove("notifications")
-        }
-
-        foreach ($inv in $run.invocations) {
-            foreach ($note in $inv.toolExecutionNotifications) {
-                if ($note.PSObject.Properties["timeUtc"]) {
-                    $note.PSObject.Properties.Remove("timeUtc")
-                }
-            }
-        }
-    }
-
-    $cleanJson = $json | ConvertTo-Json -Depth 100
-
-    return (New-Object System.Security.Cryptography.SHA256Managed).
-            ComputeHash([System.Text.Encoding]::UTF8.GetBytes($cleanJson)) |
-            ForEach-Object { $_.ToString("x2") } -join ""
-}
