@@ -13,24 +13,13 @@ function Get-RelevantSarifHash {
     $json = Get-Content $sarifPath -Raw | ConvertFrom-Json
 
     foreach ($run in $json.runs) {
-        if ($run.tool.driver.PSObject.Properties["semanticVersion"]) {
-            $run.tool.driver.PSObject.Properties.Remove("semanticVersion")
-        }
+        # Entferne semanticVersion überall
+        Remove-JsonProperty -object $run -propertyName "semanticVersion"
+        Remove-JsonProperty -object $run -propertyName "timeUtc"
 
-        if ($run.tool.driver.PSObject.Properties["notifications"]) {
-            $run.tool.driver.PSObject.Properties.Remove("notifications")
-        }
-
-        foreach ($inv in $run.invocations) {
-            foreach ($note in $inv.toolExecutionNotifications) {
-                if ($note.PSObject.Properties["timeUtc"]) {
-                    $note.PSObject.Properties.Remove("timeUtc")
-                }
-            }
-        }
     }
 
-    $cleanJson = $json | ConvertTo-Json -Depth 100
+    $cleanJson = $json | ConvertTo-Json -Depth 100 -Compress
 
     $hash = (New-Object System.Security.Cryptography.SHA256Managed).
             ComputeHash([System.Text.Encoding]::UTF8.GetBytes($cleanJson)) |
@@ -38,6 +27,32 @@ function Get-RelevantSarifHash {
 
     return $hash -join ""
 }
+
+function Remove-JsonProperty {
+    param(
+        [object]$object,
+        [string]$propertyName
+    )
+
+    if ($object.PSObject.Properties[$propertyName]) {
+        $object.PSObject.Properties.Remove($propertyName)
+    }
+
+    foreach ($prop in $object.PSObject.Properties) {
+        if ($prop.Value -is [System.Management.Automation.PSCustomObject] -or $prop.Value -is [array]) {
+            if ($prop.Value -is [array]) {
+                foreach ($item in $prop.Value) {
+                    if ($item -is [System.Management.Automation.PSCustomObject]) {
+                        Remove-JsonProperty -object $item -propertyName $propertyName
+                    }
+                }
+            } else {
+                Remove-JsonProperty -object $prop.Value -propertyName $propertyName
+            }
+        }
+    }
+}
+
 
 
 # --- PATHS ---------------------------------------------------
