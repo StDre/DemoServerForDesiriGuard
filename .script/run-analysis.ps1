@@ -12,7 +12,9 @@ $codeql = "C:\Users\drexl\Downloads\codeql-bundle-win64.tar\codeql-bundle-win64\
 $policygen = "C:\Users\drexl\OneDrive\Studium\5\ITS2\Repo\DesisriGuard-2.0\policygenerator.py"
 
 $databaseDir = Join-Path $scriptDir "java-database"
-$outputSarif = Join-Path $scriptDir "query-results.sarif"
+$queryResultsDir = Join-Path $scriptDir "query-results"
+$outputSarif = Join-Path $queryResultsDir "query-results.sarif"
+$hashFile = Join-Path $queryResultsDir "query-results.sarif.hash"
 $outputPolicy = Join-Path $scriptDir "policy"
 
 # --- CLEAN OLD DATA ------------------------------------------
@@ -21,12 +23,17 @@ if (Test-Path $databaseDir) {
     Remove-Item -Recurse -Force $databaseDir
 }
 
-if (Test-Path $outputSarif) {
-    Remove-Item $outputSarif
+if (Test-Path $queryResultsDir) {
+    Remove-Item -Recurse -Force $queryResultsDir
 }
 
 if (Test-Path $outputPolicy) {
     Remove-Item $outputPolicy
+}
+
+# --- CREATE QUERY RESULTS DIR --------------------------------
+if (-not (Test-Path $queryResultsDir)) {
+    New-Item -ItemType Directory -Path $queryResultsDir | Out-Null
 }
 
 # --- STEP 1: CREATE CODEQL DATABASE ---------------------------
@@ -59,8 +66,6 @@ if ($LASTEXITCODE -ne 0) {
 }
 
 # --- STEP 2.5: Check whether SARIF changed ---------------------------
-$hashFile = "$outputSarif.hash"
-
 if (Test-Path $hashFile) {
     $oldHash = Get-Content $hashFile
     $newHash = Get-RelevantSarifHash -sarifPath $outputSarif
@@ -70,16 +75,10 @@ if (Test-Path $hashFile) {
         exit 0
     }
 } else {
-    # Es existiert noch kein Hash, deshalb jetzt generieren
     $newHash = Get-RelevantSarifHash -sarifPath $outputSarif
 }
 
-# Hash speichern
-Set-Content -Path $hashFile -Value $newHash
-
-
 # --- STEP 3: GENERATE POLICY (ONLY IF SARIF CHANGED) -----------------
-
 Write-Host "SARIF changed → Generating new DesiriGuard policy..." -ForegroundColor Cyan
 
 py $policygen `
@@ -92,37 +91,27 @@ if ($LASTEXITCODE -ne 0) {
     exit 1
 }
 
-# Save hash for future comparisons
-$currentHash | Out-File $hashFile
+# Save hash
+Set-Content -Path $hashFile -Value $newHash
 
 Write-Host "New policy generated." -ForegroundColor Green
-
-
-
-
 
 function Get-RelevantSarifHash {
     param(
         [string]$sarifPath
     )
 
-    # SARIF laden
     $json = Get-Content $sarifPath -Raw | ConvertFrom-Json
 
-    # Metadaten entfernen, die sich jedes Mal ändern
     foreach ($run in $json.runs) {
-
-        # 1) Versionsinfo
         if ($run.tool.driver.PSObject.Properties["semanticVersion"]) {
             $run.tool.driver.PSObject.Properties.Remove("semanticVersion")
         }
 
-        # 2) notifications komplett entfernen (brauchen wir nicht)
         if ($run.tool.driver.PSObject.Properties["notifications"]) {
             $run.tool.driver.PSObject.Properties.Remove("notifications")
         }
 
-        # 3) timeUtc entfernen in invocations
         foreach ($inv in $run.invocations) {
             foreach ($note in $inv.toolExecutionNotifications) {
                 if ($note.PSObject.Properties["timeUtc"]) {
@@ -132,12 +121,9 @@ function Get-RelevantSarifHash {
         }
     }
 
-    # Nur relevante Daten serialisieren
     $cleanJson = $json | ConvertTo-Json -Depth 100
 
-    # Hash erzeugen (SHA256)
     return (New-Object System.Security.Cryptography.SHA256Managed).
             ComputeHash([System.Text.Encoding]::UTF8.GetBytes($cleanJson)) |
             ForEach-Object { $_.ToString("x2") } -join ""
 }
-
