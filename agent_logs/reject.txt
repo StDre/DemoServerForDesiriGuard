@@ -1,2 +1,0 @@
-REJECTED: java.util.Collections$EmptyList (policy index 0)
-REJECTED: sun.reflect.annotation.AnnotationInvocationHandler (policy index 0)
