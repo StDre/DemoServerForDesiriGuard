@@ -4,10 +4,43 @@ baselineLinesOfCode: 54
 unicodeNewlines: false
 columnKind: utf16
 primaryLanguage: java
+inProgress:
+  primaryLanguage: java
+  installedExtractors:
+    actions:
+     - C:/Users/drexl/Downloads/codeql-bundle-win64.tar/codeql-bundle-win64/codeql/actions
+    cpp:
+     - C:/Users/drexl/Downloads/codeql-bundle-win64.tar/codeql-bundle-win64/codeql/cpp
+    csharp:
+     - C:/Users/drexl/Downloads/codeql-bundle-win64.tar/codeql-bundle-win64/codeql/csharp
+    csv:
+     - C:/Users/drexl/Downloads/codeql-bundle-win64.tar/codeql-bundle-win64/codeql/csv
+    go:
+     - C:/Users/drexl/Downloads/codeql-bundle-win64.tar/codeql-bundle-win64/codeql/go
+    html:
+     - C:/Users/drexl/Downloads/codeql-bundle-win64.tar/codeql-bundle-win64/codeql/html
+    java:
+     - C:/Users/drexl/Downloads/codeql-bundle-win64.tar/codeql-bundle-win64/codeql/java
+    javascript:
+     - C:/Users/drexl/Downloads/codeql-bundle-win64.tar/codeql-bundle-win64/codeql/javascript
+    properties:
+     - C:/Users/drexl/Downloads/codeql-bundle-win64.tar/codeql-bundle-win64/codeql/properties
+    python:
+     - C:/Users/drexl/Downloads/codeql-bundle-win64.tar/codeql-bundle-win64/codeql/python
+    ruby:
+     - C:/Users/drexl/Downloads/codeql-bundle-win64.tar/codeql-bundle-win64/codeql/ruby
+    rust:
+     - C:/Users/drexl/Downloads/codeql-bundle-win64.tar/codeql-bundle-win64/codeql/rust
+    swift:
+     - C:/Users/drexl/Downloads/codeql-bundle-win64.tar/codeql-bundle-win64/codeql/swift
+    xml:
+     - C:/Users/drexl/Downloads/codeql-bundle-win64.tar/codeql-bundle-win64/codeql/xml
+    yaml:
+     - C:/Users/drexl/Downloads/codeql-bundle-win64.tar/codeql-bundle-win64/codeql/yaml
 creationMetadata:
-  sha: 5b4d70b2f7d50199f2f4c2daedaa17a1dfed3f34
+  sha: f25d1b90b9ed5ba4ae0a4c15c1b5feefecf44401
   cliVersion: 2.23.6
-  creationTime: 2025-12-04T21:29:12.295842200Z
-overlayDatabase: false
+  creationTime: 2025-12-07T16:31:17.094559600Z
 overlayBaseDatabase: false
-finalised: true
+overlayDatabase: false
+finalised: false

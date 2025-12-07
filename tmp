@@ -4378,6 +4378,9 @@ public class java/io/ObjectInputStream extends java/io/InputStream implements ja
     LINENUMBER 2255 L7
     ALOAD 2
     INVOKEVIRTUAL java/io/ObjectStreamClass.forClass ()Ljava/lang/Class;
+    LDC "java/io/ObjectInputStream"
+    LDC "readOrdinaryObject"
+    INVOKESTATIC org/agentTest/ReadObjectFilter.checkPolicy (Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Class;
     ASTORE 3
    L8
     LINENUMBER 2256 L8
@@ -4426,6 +4429,9 @@ public class java/io/ObjectInputStream extends java/io/InputStream implements ja
     DUP
     ALOAD 2
     INVOKEVIRTUAL java/io/ObjectStreamClass.forClass ()Ljava/lang/Class;
+    LDC "java/io/ObjectInputStream"
+    LDC "readOrdinaryObject"
+    INVOKESTATIC org/agentTest/ReadObjectFilter.checkPolicy (Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Class;
     INVOKEVIRTUAL java/lang/Class.getName ()Ljava/lang/String;
     LDC "unable to create instance"
     ALOAD 5
