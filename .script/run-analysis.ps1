@@ -77,7 +77,7 @@ if (Test-Path $databaseDir) {
 }
 
 if (Test-Path $outputSarif) {
-    Write-Host "Deleting old SARIF..." -ForegroundColor Yellow
+    Write-Host "Deleting old query-results..." -ForegroundColor Yellow
     Remove-Item -Force $outputSarif
 }
 
@@ -116,13 +116,13 @@ if ($LASTEXITCODE -ne 0) {
     exit 1
 }
 
-# --- STEP 2.5: Check whether SARIF changed ---------------------------
+# --- STEP 2.5: Check whether query-results changed ---------------------------
 if (Test-Path $hashFile) {
     $oldHash = Get-Content $hashFile
     $newHash = Get-RelevantSarifHash -sarifPath $outputSarif
 
     if ($oldHash -eq $newHash) {
-        Write-Host "SARIF unchanged -> skipping policy generation." -ForegroundColor Yellow
+        Write-Host "query-results unchanged -> skipping policy generation." -ForegroundColor Yellow
         exit 0
     }
 } else {
@@ -130,7 +130,7 @@ if (Test-Path $hashFile) {
 }
 
 # --- STEP 3: GENERATE POLICY (ONLY IF SARIF CHANGED) -----------------
-Write-Host "SARIF changed -> Generating new DesiriGuard policy..." -ForegroundColor Cyan
+Write-Host "query-results changed -> Generating new DesiriGuard policy..." -ForegroundColor Cyan
 
 py $policygen `
     --path "$outputSarif" `

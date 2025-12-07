@@ -14,6 +14,7 @@ import java
 
 //keien Ahnung wieso hier die anderen net gehen
 from Call c, Method m
+
 where
   c.getCallee().hasName("readObject") and
   m = c.getCallee()
