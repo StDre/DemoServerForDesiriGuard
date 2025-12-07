@@ -15,9 +15,8 @@ public class DemoServer {
             Socket s = ss.accept();
             System.out.println("Verbindung von " + s.getRemoteSocketAddress());
             try (ObjectInputStream ois = new ObjectInputStream(s.getInputStream())) {
-                Object obj = ois.readObject();
-                Message m = (Message) obj;
-                System.out.println("Deserialisiert: " + m);
+                Object obj = (Message) ois.readObject();
+                System.out.println("Deserialisiert: " + obj);
             } catch (Throwable t) {
                 t.printStackTrace();
             } finally {

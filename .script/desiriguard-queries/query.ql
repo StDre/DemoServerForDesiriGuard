@@ -11,35 +11,10 @@
 import java
 
 RefType getDeserializedType(MethodCall readObjectCall) {
-  // Case 1: Direct cast after readObject()
+  // Direct cast after readObject()
   exists(CastExpr cast |
     cast.getExpr() = readObjectCall and
     result = cast.getType()
-  )
-  or
-  // Case 2: Variable assignment with explicit non-Object type
-  exists(LocalVariableDeclExpr varDecl |
-    varDecl.getInit() = readObjectCall and
-    result = varDecl.getVariable().getType() and
-    not result.hasQualifiedName("java.lang", "Object")
-  )
-  or
-  // Case 3: Assignment to existing variable with non-Object type
-  exists(AssignExpr assign, Variable v |
-    assign.getRhs() = readObjectCall and
-    assign.getDest() = v.getAnAccess() and
-    result = v.getType() and
-    not result.hasQualifiedName("java.lang", "Object")
-  )
-  or
-  // Case 4: Subsequent cast on the variable that holds readObject() result
-  // Pattern: Object obj = ois.readObject(); Message m = (Message) obj;
-  exists(LocalVariableDeclExpr varDecl, Variable var, CastExpr cast |
-    varDecl.getInit() = readObjectCall and
-    var = varDecl.getVariable() and
-    cast.getExpr() = var.getAnAccess() and
-    result = cast.getType() and
-    not result.hasQualifiedName("java.lang", "Object")
   )
 }
 
