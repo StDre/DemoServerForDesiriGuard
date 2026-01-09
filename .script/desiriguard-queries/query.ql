@@ -11,8 +11,39 @@
 import java
 
 RefType getDeserializedType(MethodCall readObjectCall) {
-  // Direct cast after readObject()
+  // Object obj = (Message) ois.readObject();
   exists(CastExpr cast |
+    cast.getExpr() = readObjectCall and
+    result = cast.getType()
+  )
+  or
+  // Message m = ois.readObject();
+  exists(LocalVariableDeclExpr varDecl |
+    varDecl.getInit() = readObjectCall and
+    result = varDecl.getVariable().getType() and
+    not result.hasQualifiedName("java.lang", "Object")
+  )
+  or
+  // Message m; m = ois.readObject();
+  exists(AssignExpr assign, Variable v |
+    assign.getRhs() = readObjectCall and
+    assign.getDest() = v.getAnAccess() and
+    result = v.getType() and
+    not result.hasQualifiedName("java.lang", "Object")
+  )
+  or
+  // Object obj = ois.readObject(); Message m = (Message) obj;
+  exists(LocalVariableDeclExpr varDecl, Variable var, CastExpr cast |
+    varDecl.getInit() = readObjectCall and
+    var = varDecl.getVariable() and
+    cast.getExpr() = var.getAnAccess() and
+    result = cast.getType() and
+    not result.hasQualifiedName("java.lang", "Object")
+  )
+  or
+  // return (Message) ois.readObject();
+  exists(ReturnStmt returnStmt, CastExpr cast |
+    returnStmt.getResult() = cast and
     cast.getExpr() = readObjectCall and
     result = cast.getType()
   )
